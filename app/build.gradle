@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    def globalConfig = rootProject.extensions.getByName("ext")
+    def versionMajor = globalConfig["versionMajor"]
+    def versionMinor = globalConfig["versionMinor"]
+    def versionPatch = globalConfig["versionPatch"]
+    def buildNumber = globalConfig["buildNumber"]
+    def appVersionName = globalConfig["versionName"]
+    def appVersionCode = globalConfig["versionCode"]
+
+    compileSdkVersion project.androidCompileSdkVersion
+
+    signingConfigs {
+        config {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['storePassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['keyPassword']
+        }
+    }
+
+    defaultConfig {
+        applicationId globalConfig["applicationId"]
+        versionCode appVersionCode
+        versionName appVersionName
+
+        minSdkVersion project.androidMinSdkVersion
+        targetSdkVersion project.androidTargetSdkVersion
+
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "app_version", "${defaultConfig.versionName}"
+            signingConfig signingConfigs.config
+            ndk {
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            }
+        }
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    rootProject.appDependencies.each {
+        add(it.configuration, it.dependency, it.options)
+    }
+    implementation project(path: ':domain')
+    implementation project(path: ':data')
+}

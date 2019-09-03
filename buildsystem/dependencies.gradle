@@ -1,0 +1,258 @@
+ext {
+    //Android Libraries
+    androidMinSdkVersion = 16
+    androidTargetSdkVersion = 28
+    androidCompileSdkVersion = 28
+    multiDexVersion = '1.0.2'
+
+    //Android Architecture Component Libraries
+    archLifecycleVersion = '1.1.1'
+    archRoomVersion = '1.1.1'
+    archPagingVersion = '1.0.1'
+    archWorkManagerVersion = '1.0.1'
+
+    //Common Libraries
+    appCompatVersion = '27.1.0'
+    supportLibraryVersion = '27.1.1'
+    constraintLayoutVersion = '1.1.0'
+    daggerVersion = '2.11'
+    designVersion = '27.1.1'
+    butterknifeVersion = '10.0.0'
+    timberVersion = '4.7.1'
+    rxAndroidVersion = '2.1.0'
+    rxJavaVersion = '2.2.6'
+    circleImageVersion = '2.2.0'
+    glideVersion = '4.8.0'
+    rxBindingVersion = '2.1.1'
+    easyFlipVersion = '2.0.5'
+    pageIndicatorViewVersion = '1.0.1'
+    cardviewVersion = '27.1.1'
+    simpleStackVersion = '1.9.2'
+    autoValueVersion = '1.6.1'
+    autoValueParcelVersion = '0.2.6'
+    expandableVersion = '2.9.2'
+    autofitTextviewVersion = '0.2.1'
+    carouselViewVersion = '0.1.4'
+    libPhoneNumberVersion = '8.9.9'
+    materialDialogVersion = '0.9.6.0'
+    caveRockVersion = '1.2.1'
+    okioVersion = '1.14.0'
+    skeletonVersion = '1.1.1'
+    shimmerlayoutVersion = '2.1.0'
+    securePreferencesVersion = '0.1.4'
+    markWonVersion = '2.0.0'
+    flashbarVersion = '1.0.3'
+    compressorVersion = '2.1.0'
+    discreteScrollview = '1.4.9'
+    retrofitVersion = '2.4.0'
+    gsonVersion = '2.8.5'
+    okhttpVersion = '3.11.0'
+    autoScrollViewPagerVersion = '1.1.2'
+    fcmVersion = '17.3.4'
+    firebaseVersion = '16.0.4'
+    googleServiceAuthVersion = '16.0.1'
+    googleMapVersion = '16.1.0'
+    googleServiceLocation = '16.0.0'
+    rxLocationVersion = '2.1'
+    lottieVersion = '3.0.7'
+
+    //Testing Libraries
+    jUnitVersion = '4.12'
+    runnerVersion = '1.0.2'
+    espressoVersion = '3.0.2'
+    mockitoVersion = '1.9.5'
+    powerMockitoVersion = '1.7.3'
+    ruleVersion = '1.0.2'
+
+    //Pull to Refresh Library
+    ultraPullToRefreshVersion = '1.0.11'
+
+    def androidLibs = [
+            appCompat           : [group: 'com.android.support', name: 'appcompat-v7', version: supportLibraryVersion],
+            supportv4           : [group: 'com.android.support', name: 'support-v4', version: supportLibraryVersion],
+            supportAnnotation   : [group: 'com.android.support', name: 'support-annotations', version: supportLibraryVersion],
+            androidDesign       : [group: 'com.android.support', name: 'design', version: designVersion],
+            multidex            : [group: 'com.android.support', name: 'multidex', version: multiDexVersion],
+            cardview            : [group: 'com.android.support', name: 'cardview-v7', version: cardviewVersion],
+            constraintLayout    : [group: 'com.android.support.constraint', name: 'constraint-layout', version: constraintLayoutVersion],
+            lifecycle           : [group: 'android.arch.lifecycle', name: 'extensions', version: archLifecycleVersion],
+            pagingRx            : [group: 'android.arch.paging', name: 'rxjava2', version: archPagingVersion],
+            pagingRuntime       : [group: 'android.arch.paging', name: 'runtime', version: archPagingVersion],
+            roomRuntime         : [group: 'android.arch.persistence.room', name: 'runtime', version: archRoomVersion],
+            roomCompiler        : [group: 'android.arch.persistence.room', name: 'compiler', version: archRoomVersion],
+            roomRxJava          : [group: 'android.arch.persistence.room', name: 'rxjava2', version: archRoomVersion],
+            workManager         : [group: 'android.arch.work', name: 'work-runtime', version: archWorkManagerVersion],
+            rxWorker            : [group: 'android.arch.work', name: 'work-rxjava2', version: archWorkManagerVersion],
+            ultraPullToRefresh  : [group: 'in.srain.cube', name: 'ultra-ptr', version: ultraPullToRefreshVersion]
+    ]
+
+    def libs = [
+            dagger              : [group: 'com.google.dagger', name: 'dagger', version: daggerVersion],
+            daggerCompiler      : [group: 'com.google.dagger', name: 'dagger-compiler', version: daggerVersion],
+            timber              : [group: 'com.jakewharton.timber', name: 'timber', version: timberVersion],
+            butterknife         : [group: 'com.jakewharton', name: 'butterknife', version: butterknifeVersion],
+            butterknifeCompiler : [group: 'com.jakewharton', name: 'butterknife-compiler', version: butterknifeVersion],
+            rxAndroid           : [group: 'io.reactivex.rxjava2', name: 'rxandroid', version: rxAndroidVersion],
+            rxJava              : [group: 'io.reactivex.rxjava2', name: 'rxjava', version: rxJavaVersion],
+            circleImage         : [group: 'de.hdodenhof', name: 'circleimageview', version: circleImageVersion],
+            glide               : [group: 'com.github.bumptech.glide', name: 'glide', version: glideVersion],
+            glideCompiler       : [group: 'com.github.bumptech.glide', name: 'compiler', version: glideVersion],
+            caveRockSvg         : [group: 'com.caverock', name: 'androidsvg', version: caveRockVersion],
+            rxBinding           : [group: 'com.jakewharton.rxbinding2', name: 'rxbinding', version: rxBindingVersion],
+            easyFlip            : [group: 'com.wajahatkarim3.EasyFlipView', name: 'EasyFlipView', version: easyFlipVersion],
+            pageIndicatorView   : [group: 'com.romandanylyk', name: 'pageindicatorview', version: pageIndicatorViewVersion],
+            simpleStack         : [group: 'com.github.Zhuinden', name: 'simple-stack', version: simpleStackVersion],
+            autoValue           : [group: 'com.google.auto.value', name: 'auto-value', version: autoValueVersion],
+            autoValueAnnotations: [group: 'com.google.auto.value', name: 'auto-value-annotations', version: autoValueVersion],
+            autoValueParcel     : [group: 'com.ryanharter.auto.value', name: 'auto-value-parcel', version: autoValueParcelVersion],
+            expandableLayout    : [group: 'net.cachapa.expandablelayout', name: 'expandablelayout', version: expandableVersion],
+            autofitTextView     : [group: 'me.grantland', name: 'autofittextview', version: autofitTextviewVersion],
+            carouselView        : [group: 'com.synnapps', name: 'carouselview', version: carouselViewVersion],
+            libPhoneNumber      : [group: 'io.michaelrocks', name: 'libphonenumber-android', version: libPhoneNumberVersion],
+            materialDialog      : [group: 'com.afollestad.material-dialogs', name: 'core', version: materialDialogVersion],
+            okio                : [group: 'com.squareup.okio', name: 'okio', version: okioVersion],
+            skeleton            : [group: 'com.ethanhua', name: 'skeleton', version: skeletonVersion],
+            shimmerlayout       : [group: 'io.supercharge', name: 'shimmerlayout', version: shimmerlayoutVersion],
+            securePreference    : [group: 'com.scottyab', name: 'secure-preferences-lib', version: securePreferencesVersion],
+            markWon             : [group: 'ru.noties', name: 'markwon', version: markWonVersion],
+            flashbar            : [group: 'com.andrognito.flashbar', name: 'flashbar', version: flashbarVersion],
+            compressor          : [group: 'id.zelory', name: 'compressor', version: compressorVersion],
+            discreteScrollview  : [group: 'com.yarolegovich', name: 'discrete-scrollview', version: discreteScrollview],\
+            autoScrollViewPager : [group: 'cn.trinea.android.view.autoscrollviewpager', name: 'android-auto-scroll-view-pager', version: autoScrollViewPagerVersion],
+            firebase            : [group: 'com.google.firebase', name: 'firebase-core', version: firebaseVersion],
+            fcm                 : [group: 'com.google.firebase', name: 'firebase-messaging', version: fcmVersion],
+            googleMap           : [group: 'com.google.android.gms', name: 'play-services-maps', version: googleMapVersion],
+            googleServiceAuth   : [group: 'com.google.android.gms', name: 'play-services-auth', version: googleServiceAuthVersion],
+            googleServiceLoc    : [group: 'com.google.android.gms', name: 'play-services-location', version: googleServiceLocation],
+            rxLocation          : [group: 'pl.charmas.android', name: 'android-reactive-location2', version: rxLocationVersion, ext: 'aar'],
+            lottie              : [group: 'com.airbnb.android', name: 'lottie', version: lottieVersion]
+    ]
+
+    def networkLibs = [
+            gson             : [group: 'com.google.code.gson', name: 'gson', version: gsonVersion],
+            retrofit         : [group: 'com.squareup.retrofit2', name: 'retrofit', version: retrofitVersion],
+            retrofitAdapter  : [group: 'com.squareup.retrofit2', name: 'adapter-rxjava2', version: retrofitVersion],
+            retrofitConverter: [group: 'com.squareup.retrofit2', name: 'converter-gson', version: retrofitVersion],
+            okhttp           : [group: 'com.squareup.okhttp3', name: 'logging-interceptor', version: okhttpVersion]
+    ]
+
+    def testLibs = [
+            junit            : [group: 'junit', name: 'junit', version: jUnitVersion],
+            runner           : [group: 'com.android.support.test', name: 'runner', version: runnerVersion],
+            espressoCore     : [group: 'com.android.support.test.espresso', name: 'espresso-core', version: espressoVersion],
+            mockito          : [group: 'org.mockito', name: 'mockito-core', version: mockitoVersion],
+            powerMockito     : [group: 'org.powermock', name: 'powermock-api-mockito2', version: powerMockitoVersion],
+            powerMockitoJunit: [group: 'org.powermock', name: 'powermock-module-junit4', version: powerMockitoVersion],
+            rule             : [group: 'com.android.support.test', name: 'rules', version: runnerVersion],
+            espressoContrib  : [group: 'com.android.support.test.espresso', name: 'espresso-contrib', version: espressoVersion],
+
+    ]
+
+    appDependencies = [
+            [configuration: "implementation", dependency: androidLibs.appCompat],
+            [configuration: "implementation", dependency: androidLibs.supportv4],
+            [configuration: "implementation", dependency: androidLibs.supportAnnotation],
+            [configuration: "implementation", dependency: androidLibs.androidDesign],
+            [configuration: "implementation", dependency: androidLibs.cardview],
+            [configuration: "implementation", dependency: androidLibs.constraintLayout],
+            [configuration: "implementation", dependency: androidLibs.lifecycle],
+            [configuration: "implementation", dependency: androidLibs.pagingRx],
+            [configuration: "implementation", dependency: androidLibs.pagingRuntime],
+            [configuration: "implementation", dependency: libs.dagger],
+            [configuration: "annotationProcessor", dependency: libs.daggerCompiler],
+            [configuration: "implementation", dependency: libs.butterknife],
+            [configuration: "implementation", dependency: libs.timber],
+            [configuration: "annotationProcessor", dependency: libs.butterknifeCompiler],
+            [configuration: "implementation", dependency: libs.rxAndroid],
+            [configuration: "implementation", dependency: libs.rxJava],
+            [configuration: "implementation", dependency: libs.circleImage],
+            [configuration: "implementation", dependency: libs.glide],
+            [configuration: "annotationProcessor", dependency: libs.glideCompiler],
+            [configuration: "implementation", dependency: libs.caveRockSvg],
+            [configuration: "implementation", dependency: libs.rxBinding],
+            [configuration: "implementation", dependency: libs.easyFlip],
+            [configuration: "implementation", dependency: libs.pageIndicatorView],
+            [configuration: "implementation", dependency: libs.simpleStack],
+            [configuration: "annotationProcessor", dependency: libs.autoValue],
+            [configuration: "implementation", dependency: libs.autoValueAnnotations],
+            [configuration: "annotationProcessor", dependency: libs.autoValueParcel],
+            [configuration: "implementation", dependency: libs.autofitTextView],
+            [configuration: "implementation", dependency: libs.expandableLayout],
+            [configuration: "implementation", dependency: libs.carouselView],
+            [configuration: "implementation", dependency: libs.materialDialog],
+            [configuration: "implementation", dependency: libs.shimmerlayout],
+            [configuration: "implementation", dependency: libs.skeleton],
+            [configuration: "implementation", dependency: libs.markWon],
+            [configuration: "implementation", dependency: libs.flashbar],
+            [configuration: "implementation", dependency: libs.compressor],
+            [configuration: "implementation", dependency: libs.autoScrollViewPager, options: {
+                exclude module: 'support-v4'
+            }],
+            [configuration: "implementation", dependency: libs.discreteScrollview],
+            [configuration: "implementation", dependency: libs.fcm],
+            [configuration: "implementation", dependency: libs.firebase],
+            [configuration: "testImplementation", dependency: testLibs.powerMockito],
+            [configuration: "testImplementation", dependency: testLibs.powerMockitoJunit],
+            [configuration: "testImplementation", dependency: testLibs.junit],
+            [configuration: "androidTestImplementation", dependency: testLibs.runner],
+            [configuration: "androidTestImplementation", dependency: testLibs.espressoCore],
+            [configuration: "androidTestImplementation", dependency: testLibs.espressoContrib, option: {
+                exclude group: 'com.android.support', module: 'appcompat'
+                exclude group: 'com.android.support', module: 'support-v4'
+                exclude group: 'com.android.support', module: 'support-annotations'
+                exclude group: 'com.android.support', module: 'design'
+                exclude module: 'recyclerview-v7'
+            }],
+            [configuration: "androidTestImplementation", dependency: testLibs.rule],
+            [configuration: "implementation", dependency: libs.googleMap],
+            [configuration: "implementation", dependency: libs.googleServiceAuth],
+            [configuration: "implementation", dependency: libs.googleServiceLoc],
+            [configuration: "implementation", dependency: libs.rxLocation],
+            [configuration: "implementation", dependency: libs.lottie],
+            [configuration: "implementation", dependency: androidLibs.workManager],
+            [configuration: "implementation", dependency: androidLibs.rxWorker],
+            [configuration: "implementation", dependency: androidLibs.ultraPullToRefresh]
+    ]
+
+    dataDependencies = [
+            [configuration: "implementation", dependency: androidLibs.appCompat],
+            [configuration: "implementation", dependency: androidLibs.roomRuntime],
+            [configuration: "annotationProcessor", dependency: androidLibs.roomCompiler],
+            [configuration: "implementation", dependency: androidLibs.roomRxJava],
+            [configuration: "implementation", dependency: libs.dagger],
+            [configuration: "annotationProcessor", dependency: libs.daggerCompiler],
+            [configuration: "implementation", dependency: libs.rxAndroid],
+            [configuration: "implementation", dependency: libs.rxJava],
+            [configuration: "implementation", dependency: libs.okio],
+            [configuration: "implementation", dependency: libs.libPhoneNumber],
+            [configuration: "implementation", dependency: libs.securePreference],
+            [configuration: "implementation", dependency: libs.timber],
+            [configuration: "testImplementation", dependency: testLibs.junit],
+            [configuration: "androidTestImplementation", dependency: testLibs.runner],
+            [configuration: "androidTestImplementation", dependency: testLibs.espressoCore],
+            [configuration: "api", dependency: networkLibs.gson],
+            [configuration: "api", dependency: networkLibs.retrofit],
+            [configuration: "api", dependency: networkLibs.retrofitAdapter],
+            [configuration: "api", dependency: networkLibs.retrofitConverter],
+            [configuration: "api", dependency: networkLibs.okhttp],
+            [configuration: "implementation", dependency: libs.fcm],
+            [configuration: "implementation", dependency: libs.firebase],
+            [configuration: "testImplementation", dependency: testLibs.mockito],
+            [configuration: "testImplementation", dependency: testLibs.powerMockito],
+            [configuration: "testImplementation", dependency: testLibs.powerMockitoJunit],
+            [configuration: "implementation", dependency: libs.googleServiceAuth]
+    ]
+
+    domainDependencies = [
+            [configuration: "implementation", dependency: androidLibs.appCompat],
+            [configuration: "implementation", dependency: libs.dagger],
+            [configuration: "annotationProcessor", dependency: libs.daggerCompiler],
+            [configuration: "implementation", dependency: libs.rxAndroid],
+            [configuration: "implementation", dependency: libs.rxJava],
+            [configuration: "implementation", dependency: libs.timber],
+            [configuration: "testImplementation", dependency: testLibs.junit],
+            [configuration: "testImplementation", dependency: testLibs.mockito],
+            [configuration: "androidTestImplementation", dependency: testLibs.runner],
+            [configuration: "androidTestImplementation", dependency: testLibs.espressoCore]
+    ]
+}
