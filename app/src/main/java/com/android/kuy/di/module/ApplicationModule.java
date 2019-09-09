@@ -1,5 +1,10 @@
 package com.android.kuy.di.module;
 
+import com.android.data.JobExecutor;
+import com.android.domain.PostExecutionThread;
+import com.android.domain.ThreadExecutor;
+import com.android.kuy.UIThread;
+
 import android.app.Application;
 import android.content.Context;
 
@@ -31,5 +36,17 @@ public class ApplicationModule {
     @Singleton
     Application provideApplication() {
         return application;
+    }
+
+    @Provides
+    @Singleton
+    ThreadExecutor provideThreadExecutor(JobExecutor jobExecutor) {
+        return jobExecutor;
+    }
+
+    @Provides
+    @Singleton
+    PostExecutionThread providePostExecutionThread(UIThread uiThread) {
+        return uiThread;
     }
 }
